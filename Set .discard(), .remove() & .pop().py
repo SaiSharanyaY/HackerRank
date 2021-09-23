@@ -34,12 +34,35 @@ discard 6
 remove 5
 pop 
 discard 5
+
 Sample Output
 
 4
+
 Explanation
 
 After completing these  operations on the set, we get set. Hence, the sum is .
 
 Note: Convert the elements of set s to integers while you are assigning them. To ensure the proper input of the set, we have added the first two lines of code to the editor.
 " " "
+
+# code :
+
+n = int(input())
+s = set(map(int, input().split()))
+N = int(input())
+
+for i in range(N):
+    a=[]
+    a=input().split()
+    if a[0] == 'pop':
+        s.pop()
+    elif a[0] == 'remove':
+        s.remove(int(a[1]))
+    elif a[0] == 'discard':
+        s.discard(int(a[1]))
+    else:
+        print("Invalid command")
+
+print(sum(s))
+
